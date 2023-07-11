@@ -20,7 +20,7 @@ function Review(props) {
   return (
     <div style={{ border: "1px solid #c3c3c3", borderRadius: 5, padding: 10, marginTop: 20, marginBottom: 20 }}>
       <div style={{ display: "flex" }}>
-        <h3 style={{ width: "100%", margin: 0 }}>
+        <h5 style={{ width: "100%", margin: 0 }}>
           {props.Name}{" "}
           <span
             style={{
@@ -31,8 +31,8 @@ function Review(props) {
             }}>
             {props.Country}
           </span>
-        </h3>
-        <h3 style={{ margin: 0, color: getPercentageValue(props.Grade) }}>{props.Grade * 10}/10</h3>
+        </h5>
+        <h5 style={{ margin: 0, color: getPercentageValue(props.Grade) }}>{props.Grade * 10}/10</h5>
       </div>
       <p style={{ marginTop: 5 }}>Price: ${props.Price.toFixed(2)}</p>
       <p style={{ marginBottom: 0 }} dangerouslySetInnerHTML={{ __html: props.Comment }}></p>

@@ -1,7 +1,7 @@
 [
   {
     "Name": "Philz Campbell",
-    "Grade": 0,
+    "Grade": 0.3,
     "Price": 4.9,
     "Country": "SF Bay",
     "Comment": "I don't understand Philz, it tastes like any other drip coffee. I feel gas-lite by everyone who says this is good. The coffee literally tastes like divorce court."
@@ -9,7 +9,7 @@
   {
     "Name": "Mazarine",
     "Grade": 1,
-    "Price": 6.0,
+    "Price": 6.75,
     "Country": "SF Bay",
     "Comment": "It might cost you the kidney of your fourth born son, but if heaven was real, they would serve Mazarine there."
   },
@@ -25,7 +25,7 @@
     "Grade": 0.8,
     "Price": 2.2,
     "Country": "Rome",
-    "Comment": "It tastes good but it doesn't stand out. Its like a handjob, I can't complain but there are better options to ask for."
+    "Comment": "It tastes good but it doesn't stand out. Its like one of those pineapple beers, no one ever buys then, they just show up in your pantry one day."
   },
   {
     "Name": "Campus Starbucks",
@@ -53,7 +53,7 @@
     "Grade": 1,
     "Price": 6,
     "Country": "LA",
-    "Comment": "This coffee tastes like the ex that knows how you <span style='font-weight: bolder'><i>like it.</i></span>"
+    "Comment": "The flavor of this coffee resembles a faint recollection, akin to the ethereal remembrance, of a former lover who once held genuine affection for you."
   },
   {
     "Name": "Mandarin Coffee",

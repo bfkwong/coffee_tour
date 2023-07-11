@@ -48,12 +48,12 @@ function App() {
       <div className="content">
         <div style={{ display: "flex", alignItems: "center", marginBottom: 25 }}>
           <span style={{ fontSize: 65, margin: "0px 15px 0px 0px", padding: 0 }}>☕️</span>
-          <h1 style={{ margin: 0, padding: 0 }}>Bryan's Coffee Tour</h1>
+          <h2 style={{ margin: 0, padding: 0, fontWeight: 600 }}>Bryan's Coffee Tour</h2>
         </div>
         <Alert variant="success">
           Check out this essay:{" "}
           <span className="link" onClick={() => setShowEssay(true)}>
-            "A Tale of Sensible Choices and Tempting Desires"
+            "Shades of Passion and Prudence"
           </span>
         </Alert>
         {COFFEE_DATA.map((coffee) => (
@@ -63,7 +63,7 @@ function App() {
       </div>
       <Modal size="lg" show={showEssay} onHide={() => setShowEssay(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>A Tale of Sensible Choices and Tempting Desires</Modal.Title>
+          <Modal.Title>Shades of Passion and Prudence</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <p style={{ marginBottom: 50 }}>

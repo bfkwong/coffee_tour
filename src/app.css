@@ -13,3 +13,19 @@ body {
 .content {
   max-width: 700px;
 }
+
+.link {
+  text-decoration: underline;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.link:hover {
+  cursor: pointer;
+}
+
+.emphasis {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 0;
+}

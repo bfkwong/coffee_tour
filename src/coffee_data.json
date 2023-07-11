@@ -1,0 +1,65 @@
+[
+  {
+    "Name": "Philz Campbell",
+    "Grade": 0,
+    "Price": 4.9,
+    "Country": "SF Bay",
+    "Comment": "I don't understand Philz, it tastes like any other drip coffee. I feel gas-lite by everyone who says this is good. The coffee literally tastes like divorce court."
+  },
+  {
+    "Name": "Mazarine",
+    "Grade": 1,
+    "Price": 6.0,
+    "Country": "SF Bay",
+    "Comment": "It might cost you the kidney of your fourth born son, but if heaven was real, they would serve Mazarine there."
+  },
+  {
+    "Name": "Roscioli Caffe",
+    "Grade": 1,
+    "Price": 2.15,
+    "Country": "Rome",
+    "Comment": "If you ask Americans to bang out coffee like this, they’ll nut too soon and call you mommy on accident."
+  },
+  {
+    "Name": "404 Name Not Found",
+    "Grade": 0.8,
+    "Price": 2.2,
+    "Country": "Rome",
+    "Comment": "It tastes good but it doesn't stand out. Its like a handjob, I can't complain but there are better options to ask for."
+  },
+  {
+    "Name": "Campus Starbucks",
+    "Grade": 0.4,
+    "Price": 4.25,
+    "Country": "SLO",
+    "Comment": "This coffee is not for drinking, its purely for energy at 2AM when you have an 8AM final the next morning and you’re out of Yerbs."
+  },
+  {
+    "Name": "Scout’s Coffee",
+    "Grade": 0.7,
+    "Price": 4.75,
+    "Country": "SLO",
+    "Comment": "At its best, it is the best coffee I’ve ever had. But at its worse, its tastes like sewage treatment chemicals. At least its cheap."
+  },
+  {
+    "Name": "Blackhorse",
+    "Grade": 0.7,
+    "Price": 4.5,
+    "Country": "SLO",
+    "Comment": "Strongly recommended that you BYOI (Bring Your Own Insulin)."
+  },
+  {
+    "Name": "DASH Coffee Bar",
+    "Grade": 1,
+    "Price": 6,
+    "Country": "LA",
+    "Comment": "This coffee tastes like the ex that knows how you <span style='font-weight: bolder'><i>like it.</i></span>"
+  },
+  {
+    "Name": "Mandarin Coffee",
+    "Grade": 1,
+    "Price": 6,
+    "Country": "LA",
+    "Comment": "This coffee can cure erectile dysfunction."
+  }
+]

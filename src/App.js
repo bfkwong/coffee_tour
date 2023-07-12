@@ -1,6 +1,6 @@
 import COFFEE_DATA from "./coffee_data.json";
-import { Alert, Modal } from "react-bootstrap";
-import { useState } from "react";
+import { Alert, Form, Modal } from "react-bootstrap";
+import { useEffect, useState } from "react";
 import "./app.css";
 
 const COUNTRY_COLOR_MAP = {
@@ -19,22 +19,23 @@ function getPercentageValue(value) {
 function Review(props) {
   return (
     <div style={{ border: "1px solid #c3c3c3", borderRadius: 5, padding: 10, marginTop: 20, marginBottom: 20 }}>
-      <div style={{ display: "flex" }}>
-        <h5 style={{ width: "100%", margin: 0 }}>
-          {props.Name}{" "}
-          <span
-            style={{
-              padding: "2.5px 10px 2.5px 10px",
-              backgroundColor: COUNTRY_COLOR_MAP[props.Country],
-              borderRadius: 5,
-              fontWeight: 500
-            }}>
-            {props.Country}
-          </span>
+      <div style={{ display: "flex", alignItems: "center" }}>
+        <h5 style={{ margin: 0 }}>{props.Name}</h5>
+        <h5
+          style={{
+            fontSize: 16,
+            padding: "2px 7px 2px 7px",
+            margin: "0px 0px 0px 5px",
+            backgroundColor: COUNTRY_COLOR_MAP[props.Country],
+            borderRadius: 5
+          }}>
+          {props.Country}
         </h5>
+      </div>
+      <div style={{ display: "flex", alignItems: "center", marginBottom: 10, marginTop: 10 }}>
+        <p style={{ margin: 0, width: "100%" }}>Price: ${props.Price.toFixed(2)}</p>
         <h5 style={{ margin: 0, color: getPercentageValue(props.Grade) }}>{props.Grade * 10}/10</h5>
       </div>
-      <p style={{ marginTop: 5 }}>Price: ${props.Price.toFixed(2)}</p>
       <p style={{ marginBottom: 0 }} dangerouslySetInnerHTML={{ __html: props.Comment }}></p>
     </div>
   );
@@ -42,11 +43,37 @@ function Review(props) {
 
 function App() {
   const [showEssay, setShowEssay] = useState(false);
+  const [ordering, setOrdering] = useState("none");
+  const [coffeeListSorted, setCoffeeListSorted] = useState(COFFEE_DATA);
+
+  useEffect(() => {
+    const COFFEE_DATA_COPY = JSON.parse(JSON.stringify(COFFEE_DATA));
+    switch (ordering) {
+      case "best_to_worse":
+        COFFEE_DATA_COPY.sort((a, b) => a.Grade < b.Grade);
+        setCoffeeListSorted(COFFEE_DATA_COPY);
+        break;
+      case "worse_to_best":
+        COFFEE_DATA_COPY.sort((a, b) => a.Grade > b.Grade);
+        setCoffeeListSorted(COFFEE_DATA_COPY);
+        break;
+      case "cheap_to_exp":
+        COFFEE_DATA_COPY.sort((a, b) => a.Price > b.Price);
+        setCoffeeListSorted(COFFEE_DATA_COPY);
+        break;
+      case "exp_to_cheap":
+        COFFEE_DATA_COPY.sort((a, b) => a.Price < b.Price);
+        setCoffeeListSorted(COFFEE_DATA_COPY);
+        break;
+      default:
+        setCoffeeListSorted(COFFEE_DATA_COPY);
+    }
+  }, [ordering]);
 
   return (
     <div className="app">
       <div className="content">
-        <div style={{ display: "flex", alignItems: "center", marginBottom: 25 }}>
+        <div style={{ display: "flex", alignItems: "center", marginBottom: 15 }}>
           <span style={{ fontSize: 65, margin: "0px 15px 0px 0px", padding: 0 }}>☕️</span>
           <h2 style={{ margin: 0, padding: 0, fontWeight: 600 }}>Bryan's Coffee Tour</h2>
         </div>
@@ -56,8 +83,19 @@ function App() {
             "Shades of Passion and Prudence"
           </span>
         </Alert>
-        {COFFEE_DATA.map((coffee) => (
-          <Review {...coffee} />
+        <div style={{ paddingBottom: 25 }}>
+          <Form.Select onChange={(e) => setOrdering(e.target.value)}>
+            <option value="none">Sort by</option>
+            <option value="best_to_worse">Best to worse</option>
+            <option value="worse_to_best">Worse to best</option>
+            <option value="cheap_to_exp">$ to $$$</option>
+            <option value="exp_to_cheap">$$$ to $</option>
+          </Form.Select>
+        </div>
+        {coffeeListSorted.map((coffee, idx) => (
+          <div key={`${idx}`}>
+            <Review {...coffee} />
+          </div>
         ))}
         <p style={{ textAlign: "center", marginTop: 50 }}>© Bryan Kwong 2022-{new Date().getFullYear()}</p>
       </div>
